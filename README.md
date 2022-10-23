@@ -57,7 +57,7 @@ El usuario visitante puede:
   
 ## Deployment
 
-El proyecto se encuentra publicado en el siguiente enlace: https://makelaar.vercel.app/
+El proyecto se encuentra publicado en el siguiente enlace: https://makelaar.web.app/
 
   
 ## Tecnologias usadas
