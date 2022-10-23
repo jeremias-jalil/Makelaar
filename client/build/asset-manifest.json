@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00e3b58c.chunk.css",
+    "main.js": "/static/js/main.17a5127c.chunk.js",
+    "main.js.map": "/static/js/main.17a5127c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cce483dc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cce483dc.js.map",
+    "static/css/2.ed1298f3.chunk.css": "/static/css/2.ed1298f3.chunk.css",
+    "static/js/2.4bac6136.chunk.js": "/static/js/2.4bac6136.chunk.js",
+    "static/js/2.4bac6136.chunk.js.map": "/static/js/2.4bac6136.chunk.js.map",
+    "static/js/3.d13e5e75.chunk.js": "/static/js/3.d13e5e75.chunk.js",
+    "static/js/3.d13e5e75.chunk.js.map": "/static/js/3.d13e5e75.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.ed1298f3.chunk.css.map": "/static/css/2.ed1298f3.chunk.css.map",
+    "static/css/main.00e3b58c.chunk.css.map": "/static/css/main.00e3b58c.chunk.css.map",
+    "static/js/2.4bac6136.chunk.js.LICENSE.txt": "/static/js/2.4bac6136.chunk.js.LICENSE.txt",
+    "static/media/telefono-03.0a15e42d.jpg": "/static/media/telefono-03.0a15e42d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cce483dc.js",
+    "static/css/2.ed1298f3.chunk.css",
+    "static/js/2.4bac6136.chunk.js",
+    "static/css/main.00e3b58c.chunk.css",
+    "static/js/main.17a5127c.chunk.js"
+  ]
+}

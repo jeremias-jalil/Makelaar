@@ -4,11 +4,9 @@ import { loguinUserApi } from "../../Functions/api/users";
 
 import Swal from "sweetalert2";
 
-//recibimos email y token del form
 export function userLogIn({ email, password }) {
   return async function (dispatch) {
     try {
-
       const data = await loguinUserApi(email, password);
 
       switch (data.request.status) {
@@ -18,7 +16,6 @@ export function userLogIn({ email, password }) {
             payload: data.data,
           });
 
-          //guardamos en localStorage
           localStorage.setItem("userInfo", JSON.stringify(data.data));
           break;
 
@@ -66,7 +63,7 @@ export function userLogIn({ email, password }) {
 export function logOutUser() {
   return async function (dispatch) {
     localStorage.removeItem("userInfo");
-    // localStorage.removeItem("persist:root"); //libreria de redux que mantiene el estado en localstorage, se importa en el store
+
     return dispatch({ type: LOGOUT });
   };
 }

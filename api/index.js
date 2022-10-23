@@ -11,7 +11,6 @@ const app = require("./app");
 const PORT = process.env.PORT || 3010;
 const URL = process.env.FRONT_URL || "http://localhost:3000";
 
-//socketIo conexion
 const http = require("http");
 const server = http.createServer(app);
 
@@ -23,7 +22,6 @@ const socketio = require("socket.io")(server, {
 });
 
 socketio.on("connection", (socket) => {
-  //se ejecuta esta funcion cada vez q un usuario se conecta
   let name;
 
   socket.on("conectado", (nam) => {

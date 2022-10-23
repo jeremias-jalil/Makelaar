@@ -168,32 +168,27 @@ export default function TopBar() {
     );
   };
 
-  ///// -- Login dialog
   const [showDialog, setShowDialog] = useState(false);
 
   const openDialog = () => setShowDialog(true);
   const closeDialog = () => setShowDialog(false);
 
-  ///// --Reset password dialog.
   const [showDialogReset, setShowDialogReset] = useState(false);
 
   const openDialogReset = () => setShowDialogReset(true);
 
   const closeDialogReset = () => setShowDialogReset(false);
 
-  ///// -- Register dialog
-
   const [showDialogRegister, setShowDialogRegister] = useState(false);
 
   const openDialogRegister = () => setShowDialogRegister(true);
 
   const closeDialogRegister = () => setShowDialogRegister(false);
-  ////
+
   const [showFav, setShowFav] = useState(false);
 
   const openFav = () => setShowFav(true);
   const closeFav = () => setShowFav(false);
-  // logout dialog
 
   const [openDialogLogout, setOpenDialogLogout] = useState(false);
 

@@ -4,12 +4,10 @@ const { Notifications, Payment, User, Contract } = require("../db");
 
 const URL = process.env.FRONT_URL || "http://localhost:3000";
 
-//SDK mercadopago
 var mercadopago = require("mercadopago");
 
-//Agrega credenciales
 mercadopago.configure({
-  access_token: PROD_ACCESS_TOKEN, //token del vendedor (es ficticio)
+  access_token: PROD_ACCESS_TOKEN,
 });
 
 async function getAllPayments(req, res, next) {
@@ -28,12 +26,11 @@ async function createPreference(req, res, next) {
   const { title, price, description, contractId } = req.body;
 
   try {
-    //"orden de compra"
     let preference = {
       items: [
         {
-          id: contractId, //id contrato
-          title: title, //de la propiedad
+          id: contractId,
+          title: title,
           currency_id: "ARS",
           picture_url:
             "https://res.cloudinary.com/makelaar/image/upload/v1631883556/logo-color_bzxf50.png", //logo makelar
@@ -42,7 +39,6 @@ async function createPreference(req, res, next) {
           quantity: 1,
           unit_price: parseInt(price),
 
-          //devuelven el estado de la compra
           back_urls: {
             success: URL,
             failure: URL,
@@ -57,13 +53,12 @@ async function createPreference(req, res, next) {
     };
     const respuesta = await mercadopago.preferences.create(preference);
 
-    return res.send(respuesta.response.init_point); //se coloca el init point de produccion (del vendedor)
+    return res.send(respuesta.response.init_point);
   } catch (err) {
     next(err);
   }
 }
 
-//notificaciones
 async function newNotification(req, res, next) {
   const { id } = req.query;
   const { topic, resource } = req.body;
@@ -75,7 +70,6 @@ async function newNotification(req, res, next) {
         resource: `https://api.mercadopago.com/v1/payments/${id}`,
       });
 
-      //consultamos datos del pago
       let references = await axios.get(
         `https://api.mercadopago.com/v1/payments/${id}`,
         {

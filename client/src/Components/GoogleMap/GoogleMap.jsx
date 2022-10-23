@@ -8,8 +8,6 @@ require("dotenv").config();
 
 const { REACT_APP_GOOGLE_API_KEY } = process.env;
 
-//Envia por props latitud y longitus paraa centrar el mapa
-
 export function MapContainer({ lat, lng, estates }) {
   const [coordinates, setCoordinates] = useState({ lat: "", lng: "" });
   const [show, setShow] = useState(null);

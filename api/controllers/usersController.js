@@ -49,7 +49,6 @@ async function allUsers(req, res, next) {
 async function resetPassword(req, res, next) {
   const { email } = req.body;
   try {
-    //encriptamos pass
     const newPass = Math.floor(
       Math.random() * 1000000000,
       1000000000

@@ -39,7 +39,6 @@ module.exports = (db) => {
       ),
     },
     comments: {
-      //para agregar aclaraciones si es necesario
       type: DataTypes.TEXT,
       allowNull: true,
     },

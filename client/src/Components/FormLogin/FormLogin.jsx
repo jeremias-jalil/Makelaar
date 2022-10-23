@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { userLogIn } from "../../Redux/Actions/userActions";
 
-//material
 import TextField from "@material-ui/core/TextField";
 import { makeStyles, Button } from "@material-ui/core";
 import Visibility from "@material-ui/icons/Visibility";
@@ -46,8 +45,6 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-//material
-
 export function validate(input) {
   let errors = {};
   if (!input.email) {
@@ -89,7 +86,6 @@ export default function FormLogin({ action }) {
     }
   }, [userInfo]); // eslint-disable-line react-hooks/exhaustive-deps
 
- 
   function handleChange(e) {
     e.persist();
     setInput({
@@ -145,7 +141,6 @@ export default function FormLogin({ action }) {
             Password
           </InputLabel>
           <OutlinedInput
-          
             label="Contraseña"
             name="password"
             id="password"
@@ -172,7 +167,6 @@ export default function FormLogin({ action }) {
           />
           <em>{errors.password}</em>
         </FormControl>
-
       </div>
 
       <div>
@@ -187,7 +181,6 @@ export default function FormLogin({ action }) {
           </Button>
         </p>
       </div>
-    
     </form>
   );
 }

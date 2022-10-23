@@ -28,7 +28,6 @@ const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
-// Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, "/models"))
   .filter(
     (file) =>
@@ -38,9 +37,8 @@ fs.readdirSync(path.join(__dirname, "/models"))
     modelDefiners.push(require(path.join(__dirname, "/models", file)));
   });
 
-// Injectamos la conexion (sequelize) a todos los modelos
 modelDefiners.forEach((model) => model(db));
-// Capitalizamos los nombres de los modelos ie: product => Product
+
 let entries = Object.entries(db.models);
 let capsEntries = entries.map((entry) => [
   entry[0][0].toUpperCase() + entry[0].slice(1),
@@ -48,28 +46,20 @@ let capsEntries = entries.map((entry) => [
 ]);
 db.models = Object.fromEntries(capsEntries);
 
-// En sequelize.models están todos los modelos importados como propiedades
-// Para relacionarlos hacemos un destructuring
 const { User, Property, Image, Contract, File, Payment } = db.models;
 
-//Relaciones
-//contract-property
 Property.hasMany(Contract);
 Contract.belongsTo(Property, { foreignKey: "PropertyId" });
 
-//contract-user
 User.hasMany(Contract);
 Contract.belongsTo(User, { foreignKey: "UserId" });
 
-//image-property
 Property.hasMany(Image);
 Image.belongsTo(Property, { foreignKey: "ImageId" });
 
-//file-property
 Contract.hasMany(File);
 File.belongsTo(Contract);
 
-//payment-user
 User.hasMany(Payment);
 Payment.belongsTo(User);
 
@@ -78,6 +68,6 @@ Payment.belongsTo(Contract, { foreignKey: "ContractId" });
 
 module.exports = {
   db,
-  ...db.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
+  ...db.models,
   conn: db,
 };

@@ -38,11 +38,10 @@ export function RowClassName(params) {
 export function rowData(rows, user) {
   const newrow = rows?.map((e) => {
     let newrow = e;
-    //Tabla de usuarios
+
     if (e.isAdmin) newrow = { ...newrow, isAdmin: "Si" };
     if (!e.isAdmin) newrow = { ...newrow, isAdmin: "No" };
 
-    //Tabla de contratos
     if (e.User) newrow = { ...newrow, UserId: e.User.name };
     if (e.Property) newrow = { ...newrow, PropId: e.Property.name };
 
@@ -70,11 +69,9 @@ export function rowData(rows, user) {
       newrow = { ...newrow, rest: `$ 0` };
     }
 
-    //Tabla de propiedades
     if (e.premium) newrow = { ...newrow, premium: "Destacado" };
     if (!e.premium) newrow = { ...newrow, premium: "" };
 
-    //Tabla de pagos
     if (e.Contract?.name)
       newrow = {
         ...newrow,

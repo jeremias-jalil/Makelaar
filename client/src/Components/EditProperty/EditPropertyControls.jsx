@@ -53,7 +53,6 @@ export function Controls(update, close) {
     if ("area" in values)
       error.available = values.area ? "" : "Este campo es requerido";
     if (values.area) {
-      //Regex numero real
       error.area = /^[+-]?\d+([,.]\d+)?$/.test(values.area)
         ? ""
         : "El numero de area no es valido";
@@ -62,7 +61,6 @@ export function Controls(update, close) {
     if ("price" in values)
       error.available = values.price ? "" : "Este campo es requerido";
     if (values.price) {
-      //Regex numero real
       error.price = /^[+-]?\d+([,.]\d+)?$/.test(values.price)
         ? ""
         : "El numero de area no es valido";
