@@ -112,11 +112,13 @@ socketio.on("connection", (socket) => {
 
 db.sync({ force: false }).then(async () => {
   server.listen(PORT, () => {
-    cron.schedule("44 * * * *", () => {
+    cron.schedule("0 0 20 * *", () => {
       updateContractCron();
+      console.log("Se actualizo el estado de los contratos");
     });
-    cron.schedule("* * 28 * *", () => {
+    cron.schedule("0 0 28 * *", () => {
       liquidationContract();
+      console.log("Se liquidaron los contratos");
     });
   });
 });
